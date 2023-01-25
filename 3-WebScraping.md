@@ -1,5 +1,5 @@
 ---
-title: Web-Scraping
+title: Web-Scraping Data
 layout: default
 nav_order: 3
 ---
