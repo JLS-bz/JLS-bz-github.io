@@ -42,7 +42,7 @@ Converts and processes subreddit specific .zst files into decompressed .csv file
   - **Autism/ADHD**: adhd_anxiety, ADHD, adhdwomen, asd, autism, AutisticWithADHD, aspergers
   - **Anxiety/Depression**: SuicideWatch, depression, depression_help, Anxiety, AnxietyDepression, Anxietyhelp, socialanxiety, HealthAnxiety, anxietysuccess
   - **COVID**: COVID19positive, covidlonghaulers
-   - **Dissociation**: dpdr, dpdrhelp, Dissociation, Depersonalization, derealization, DPDRecoveryStories, OSDD, anhedonia, visualsnow, BrainFog, Psychosis
+   - **Dissociation**: dpdr, dpdrhelp, Dissociation, Depersonalization, derealization, DPDRecoveryStories, OSDD, anhedonia, BrainFog, Psychosis
   - **Drugs/addiction related**: leaves, zoloft, Drugs, addiction, REDDITORSINRECOVERY, opiates, Psychonaut, benzorecovery, HPPD
   - **LGBT**: lgbt, GenderDysphoria, ftm, MtF, trans, NonBinary
   - **PTSD and Personality Disorders**: CPTSD, PTSD, ptsdrecovery, NarissisticAbuse, raisedbynarcissists, BPD, BPDlovedones, BorderlinePDisorder, BPD4BPD, BPDPartners

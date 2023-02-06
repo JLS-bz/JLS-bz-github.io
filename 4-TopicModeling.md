@@ -7,18 +7,14 @@ nav_order: 4
 # Topic Modeling with TF-IDF and LDA
 > Large segments of code were adapted from Obedkova's (2020) tutorial, namely in the following sections: SparkNLP Pipelines, PoS-based Filtering, and Vectorization.
 
-## Dependencies:
-
-1. Spark NLP version: 4.0.2
-
-2. Apache Spark version: 3.30
-
 ## Datasets
 
-1. **Dissociation**: dpdr, dpdrhelp, Dissociation, Depersonalization, derealization, DPDRecoveryStories, OSDD, anhedonia, visualsnow, BrainFog, Psychosis. 
+1. **Dissociation**: dpdr, dpdrhelp, Dissociation, Depersonalization, derealization, DPDRecoveryStories, OSDD, anhedonia, BrainFog, Psychosis. 
   - Date range: 2019-11 to 2022-04
 2. **dpdr**
   - Date range: 2022-12 to 2023-01
+
+
 Here is a glimpse of the dataset:
 ![](assets/TM-glimpse.png)<!-- -->
 
@@ -68,7 +64,7 @@ Unigram and n-gram data as shown above are first combined. Then, **TF** (term fr
 
 When performing LDA, the number of topics is fixed and predetermined. To find the optimal number of topics, LDA models with x number of topics are trained and their corresponding logLikelihood and logPerplexity calculated. This is an expensive operation to run, in terms of time and computing resources, so dataset **dpdr** was used here. 
 
-![](assets/likelihood.png) ![](assets/perplexity.png)
+![](assets/likelihood.png) | ![](assets/perplexity.png)
 
 Thus, it seems that an eye estimated optimal number of topics is NumTopic = 5.
 
@@ -81,47 +77,23 @@ The previous LDA was set to maxIter = 10. Increasing the number of iterations ca
 
 LDA relies on a random number generator for initialization, and using a seed can help ensure consistency across multiple runs.
 
-**Topics based on Unigrams & N-Grams:**
+## Topics based on Unigrams & N-Grams
 
-<p>
-  <img src="assets/chart_0_0.png" width="255" height="230" />
-  <img src="assets/chart_0_1.png" width="255" height="230" /> 
-  <img src="assets/chart_0_2.png" width="255" height="230" />
-</p>
+![](assets/chart_0_0.png) | ![](assets/chart_0_1.png)
+![](assets/chart_0_2.png) | ![](assets/chart_0_3.png)
+![](assets/chart_0_4.png) | 
 
-<p>
-  <img src="assets/chart_0_3.png" width="255" height="230" />
-  <img src="assets/chart_0_4.png" width="255" height="230" />
-</p>
+## Topics based on Unigrams
 
-**Topics based on Unigrams:**
+![](assets/chart_1_0.png) | ![](assets/chart_1_1.png)
+![](assets/chart_1_2.png) | ![](assets/chart_1_3.png)
+![](assets/chart_1_4.png) | 
 
-<p>
-  <img src="assets/chart_1_0.png" width="255" height="230" />
-  <img src="assets/chart_1_1.png" width="255" height="230" /> 
-  <img src="assets/chart_1_2.png" width="255" height="230" />
-</p>
+## Topics based on N-Grams
 
-<p>
-  <img src="assets/chart_1_3.png" width="255" height="230" />
-  <img src="assets/chart_1_4.png" width="255" height="230" />
-</p>
-
-
-**Topics based on N-Grams:**
-
-<p>
-  <img src="assets/chart_2_0.png" width="300" height="230" />
-  <img src="assets/chart_2_1.png" width="300" height="230" /> 
-</p>
-
-<img src="assets/chart_2_2.png" height="230" />
-
-<p>
-  <img src="assets/chart_2_3.png" width="300" height="230" />
-  <img src="assets/chart_2_4.png" width="300" height="230" />
-</p>
-
+![](assets/chart_2_0.png) | ![](assets/chart_2_1.png)
+![](assets/chart_2_2.png) | ![](assets/chart_2_3.png)
+![](assets/chart_2_4.png) | 
 
 
 ## References:
