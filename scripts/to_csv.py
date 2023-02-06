@@ -1,11 +1,8 @@
-# this converts a zst file to csv
-#
-# it's important to note that the resulting file will likely be quite large
-# and you probably won't be able to open it in excel or another csv reader
-#
-# arguments are inputfile, outputfile, fields
+# this converts a zst files to csv
+
+# argument is a txt file containing subreddit names
 # call this like
-# python to_csv.py wallstreetbets
+# python to_csv.py mentalhealth_SUBS.txt
 
 import zstandard
 import os

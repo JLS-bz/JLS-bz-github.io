@@ -17,40 +17,26 @@ As a result, the more manual use of files.PushShift.io itself is utilized, due t
 
 Description of web-scraped data:
 1. 2019-11 to 2021-02
+2. 
 
 The following scripts were used:
-1. A python script that automates the downloading of files from [files.pushshift.io](https://files.pushshift.io/reddit/submissions/):
+1. [filePushshiftpull.py](https://github.com/JLS-bz/JLS-bz.github.io/blob/main/scripts/filePushshiftpull.py): Automates the downloading of compressed .zst files from [files.pushshift.io](https://files.pushshift.io/reddit/submissions/): 
 
-``` python
-from tqdm import tqdm
-import urllib.request
-import os
-dates = ['2019-11', '2019-12', '2020-01', ..., '2022-12']
+2. PushshiftDumps by Watchful1
+  - [combine_folder_multiprocess.py](https://github.com/Watchful1/PushshiftDumps/blob/master/scripts/combine_folder_multiprocess.py): converts a folder of .zst files into decompressed .ndjson and subreddit specific .zst files 
+      - the following subreddits were selected and grouped according to topics of interest:
+          - **Autism/ADHD**: adhd_anxiety, ADHD, adhdwomen, asd, autism, AutisticWithADHD, aspergers
+          - **Anxiety/Depression**: SuicideWatch, depression, depression_help, Anxiety, AnxietyDepression, Anxietyhelp, socialanxiety, HealthAnxiety, anxietysuccess
+          - **COVID**: COVID19positive, covidlonghaulers
+          - **Dissociation**: dpdr, dpdrhelp, Dissociation, Depersonalization, derealization, DPDRecoveryStories, OSDD, anhedonia, visualsnow, BrainFog, DID, Psychosis
+          - **Drugs/addiction related**: leaves, zoloft, Drugs, addiction, REDDITORSINRECOVERY, opiates, Psychonaut, benzorecovery, HPPD
+          - **LGBT**: lgbt, GenderDysphoria, ftm, MtF, trans, NonBinary
+          - **PTSD and Personality Disorders**: CPTSD, PTSD, ptsdrecovery, NarissisticAbuse, raisedbynarcissists, BPD, BPDlovedones, BorderlinePDisorder, BPD4BPD, BPDPartners
+  - [single_file.py (adapted)](https://github.com/JLS-bz/JLS-bz.github.io/blob/main/scripts/to_csv.py): converts and processes subreddit specific .zst files into decompressed .csv
+      - only information falling under the following columns were kept: ['subreddit','title','selftext','score','num_comments','created_utc']
+      - columns 'title' and 'selftext' were combined to create column 'post', then dropped
 
-for i, date in enumerate(dates):
-    file_url = f'https://files.pushshift.io/reddit/submissions/RS_{date}.zst'
-    file_name = f'Datasets/RS_{date}.zst'
 
-    if not os.path.exists(file_name):
-        with tqdm(unit='MB', unit_scale=True, unit_divisor=1024, miniters=1,
-                  desc=f'{i+1}/{len(dates)}: {file_name}', leave=True) as t:
-            def reporthook(blocknum, blocksize, totalsize):
-                readsofar = blocknum * blocksize
-                if totalsize > 0:
-                    percent = readsofar * 1e2 / totalsize
-                    s = "\r%5.1f%% %*d / %d" % (
-                        percent, len(str(totalsize)), readsofar/1000000, totalsize/1000000)
-                    t.set_description(s)
-            urllib.request.urlretrieve(file_url, file_name, reporthook=reporthook)
-    else:
-        print(f"{file_name} already exists.")
-```
-
-1. PushshiftDumps by Watchful1
-  - [combine_folder_multiprocess.py](https://github.com/Watchful1/PushshiftDumps/blob/master/scripts/combine_folder_multiprocess.py)
-  - [single_file.py (adapted)]()
-
-2. 
 # Web-Scraping Facebook ?
 
 asdf
