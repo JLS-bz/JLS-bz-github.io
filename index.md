@@ -6,7 +6,7 @@ nav_order: 1
 ---
 
 # Projects
-1. [Exploratory Analyses](../2-Exploratory.md)
+1. [Exploratory Analyses](/JLS-bz.github.io/2-Exploratory.md)
 2. [Web-Scraping](../3-WebScraping.md)
 3. [Topic Modeling](../4-TopicModeling.md)
 
