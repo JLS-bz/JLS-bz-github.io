@@ -1,7 +1,7 @@
 from tqdm import tqdm
 import urllib.request
 import os
-dates = ['2019-11', '2019-12', '2020-01', ..., '2022-12']
+dates = ['2019-11', '2019-12', '2020-01', ..., '2022-04']
 
 for i, date in enumerate(dates):
     file_url = f'https://files.pushshift.io/reddit/submissions/RS_{date}.zst'

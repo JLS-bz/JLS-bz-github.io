@@ -8,37 +8,24 @@ nav_order: 4
 > Large segments of code were adapted from Obedkova's (2020) tutorial, namely in the following sections: SparkNLP Pipelines, PoS-based Filtering, and Vectorization.
 
 ## Dependencies:
-``` python
-# Install pyspark
-! pip install pyspark==3.3.0
-! apt-get install openjdk-8-jdk-headless -qq > /dev/null
 
-# Install Spark NLP
-! pip install spark-nlp==4.0.2
+1. Spark NLP version: 4.0.2
 
-# Install nltk
-! pip install nltk
-```
+2. Apache Spark version: 3.30
 
-## Import SparkNLP and initialize session
-``` python
-import sparknlp
+## Datasets
 
-spark = sparknlp.start()
-print("Spark NLP version: ", sparknlp.version())
-print("Apache Spark version: ", spark.version)
-```
-Spark NLP version: 4.0.2
-
-Apache Spark version: 3.30
-
-
+1. **Dissociation**: dpdr, dpdrhelp, Dissociation, Depersonalization, derealization, DPDRecoveryStories, OSDD, anhedonia, visualsnow, BrainFog, Psychosis. 
+  - Date range: 2019-11 to 2022-04
+2. **dpdr**
+  - Date range: 2022-12 to 2023-01
 Here is a glimpse of the dataset:
-![](assets/dpdr_Dataset_glimpse.png)<!-- -->
+![](assets/TM-glimpse.png)<!-- -->
+
 
 ## SparkNLP Pipelines
 ### No.1: Unigrams & PoS
-First, a basic pipeline is used to transform the data into unigrams and their respective Parts of Speech (PoS) labels. N-grams are also found, but may contain questionable combinations; this output will be further processed in the next pipeline.
+First, a basic pipeline is used to transform the dataset **Dissociation** into unigrams and their respective Parts of Speech (PoS) labels. N-grams are also found, but may contain questionable combinations; this output will be further processed in the next pipeline.
 
 This pipeline uses the following annotators:
 1. **Document Assembler**: Prepares data into a format that is processable by Spark NLP. This is the entry point for every Spark NLP pipeline. (*Input*: the 'post' column in the current dataset.)
@@ -53,7 +40,7 @@ This pipeline uses the following annotators:
 Contrary to commonly used NLP pipelines, a Lemmatizer Annotator is not used, in order to preserve the various uses of verb tenses. This affects generated n-grams. 
 
 Output:
-![](assets/Pipeline1_output.png)<!-- -->
+![](assets/TM-POS.png)<!-- -->
 
 ### No.2: N-Grams
 PoS-based filtering is used in this pipeline to remove strange word combinations and reduce vocab size.
@@ -66,10 +53,10 @@ The following pipeline is used to correspond PoS tag n-grams with word n-grams:
 
 ## PoS-based Filtering
 Unigrams:
-![](assets/filtered_unigrams.png)<!-- -->
+![](assets/TM-POSunigram.png)<!-- -->
 
 Bigrams and Trigrams:
-![](assets/filtered_ngrams.png)<!-- -->
+![](assets/TM-POSngram.png)<!-- -->
 
 ## Vectorization: TF-IDF
 Unigram and n-gram data as shown above are first combined. Then, **TF** (term frequency) vectorization is performed with **CountVectorizer** in PySpark. Finally, **IDF**(inverse document frequency) is used to lower word frequency scores.
@@ -79,7 +66,7 @@ Unigram and n-gram data as shown above are first combined. Then, **TF** (term fr
 
 *Direct quotation from Kulshrestha (2020)*
 
-When performing LDA, the number of topics is fixed and predetermined. To find the optimal number of topics, LDA models with x number of topics are trained and their corresponding logLikelihood and logPerplexity calculated.
+When performing LDA, the number of topics is fixed and predetermined. To find the optimal number of topics, LDA models with x number of topics are trained and their corresponding logLikelihood and logPerplexity calculated. This is an expensive operation to run, in terms of time and computing resources, so dataset **dpdr** was used here. 
 
 ![](assets/likelihood.png) ![](assets/perplexity.png)
 

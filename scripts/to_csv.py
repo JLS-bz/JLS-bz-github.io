@@ -82,7 +82,7 @@ if __name__ == "__main__":
 	input_file_path = sys.argv[1]
 	fields = ['subreddit','title','selftext','score','num_comments','created_utc']
 	cols = ['subreddit', 'post','score','num_comments','created_utc']
-	folders = ['Datasets/P1Clean', 'Datasets/P2Clean', 'Datasets/P3Clean', 'Datasets/P4Clean']
+	folders = ['Datasets/P1Clean', 'Datasets/P2Clean', 'Datasets/P3Clean', 'Datasets/P4Clean', 'Datasets/P5Clean']
 	read_and_process_files(folders, input_file_path, fields, cols)
 
 	
