@@ -9,7 +9,7 @@ nav_order: 5
 2. Add more groups to the comparisons.
 3. Organize the graphs into one single interactive plot, where specific groups can be toggled on or off.
 4. Write about the differences in trends between the different groups, in relation to COVID waves.
-5. Include hyperlinks to the subreddits within each group, within group descriptions, and provide a brief summary of the purpose of each group
+5. Include hyperlinks to the subreddits within each group, within group descriptions, and provide a brief summary of the purpose of subreddits that lack self-descriptive titles
 
 
 # Group descriptions:
