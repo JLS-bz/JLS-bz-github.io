@@ -21,8 +21,9 @@ As a result, files.PushShift.io is utilized due to its 100% operational status a
 
 **1.**  [filePushshiftpull.py](https://github.com/JLS-bz/JLS-bz.github.io/blob/main/scripts/filePushshiftpull.py)
   - Automates the downloading of compressed .zst files from [files.pushshift.io](https://files.pushshift.io/reddit/submissions/). 
-  - Date range: **2019-11 to 2022-04**.
-  - Ideally, the data range would be 2019-11 to 2022-12; however, the compressed files following 2022-4 are 10GB and up in size. Downloading, decompressing, and processing them would be too time/resource costly.
+  - Date range: **2019-11 to 2021-02**
+    -*TBA: 2019-11 to 2022-11*
+  
 
 **2.**  PushshiftDumps by Watchful1
 

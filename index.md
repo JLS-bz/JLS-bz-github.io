@@ -12,8 +12,9 @@ nav_order: 1
 
 # To Do
 1. [Time-based group comparisons](./5-TimeComp.html)
-2. Word frequency group comparisons
-3. Sentence matching
+2. [Sentiment Analysis](./6-Sentiment.html)
+3. Word frequency group comparisons
+4. Sentence matching
 
 
 
