@@ -19,5 +19,7 @@ Steps:
 
 
 
+# References
+Hamilton, W. L., Clark, K., Leskovec, J., &amp; Jurafsky, D. (2016). Inducing domain-specific sentiment lexicons from unlabeled corpora. arXiv.org. Retrieved February 13, 2023, from https://arxiv.org/abs/1606.02820 
 
 ---
