@@ -11,7 +11,9 @@ nav_order: 5
 4. Write about the differences in trends between the different groups, in relation to COVID waves.
 5. Include hyperlinks to the subreddits within each group, within group descriptions, and provide a brief summary of the purpose of subreddits that lack self-descriptive titles
 
+# Methods:
 
+Using python, time series graphs used to visualize the frequency of posts within specific subreddit groups, in relation to time period.
 # Group descriptions:
 1. **Anxiety**: Anxiety, Anxietyhelp, socialanxiety, HealthAnxiety, anxietysuccess
 2. **BPD** (Borderline Personality Disorder): BPD, BPDlovedones, BorderlinePDisorder, BPD4BPD, BPDParterns
