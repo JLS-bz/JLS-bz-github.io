@@ -14,7 +14,7 @@ When sentiment analysis is performed, a lexicon is used to compare and assign em
 *Figure 1*. Word sentiment differences between a sports subreddit and a subreddit dedicated to female perspectives and struggles (Hamilton et al. 2016).
 # Proposed Research Questions
 
-1. Is there a significant difference between subreddit group specific lexicons?
+1. Are there differences between the domain specific lexicons of various mental health subreddit groups?
 
 2. Do the most common positive and negative words differ between each group, i.e. Dissociation, Depression, and Substance Use?
 
