@@ -18,7 +18,7 @@ nav_order: 1
 # TBA
 
 Sentence matching data with DSM-V-TR content
-
+- methods used within *Time-based group comparisons* and *Sentiment Analysis* will be utilized.
 
 
 ----
