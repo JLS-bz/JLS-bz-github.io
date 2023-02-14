@@ -11,10 +11,10 @@ When humans read documents, we are able to infer the emotional valence behind wo
 When sentiment analysis is performed, a lexicon is used to compare and assign emotional sentiment to the text. Three general purpose lexicons are [AFINN](http://www2.imm.dtu.dk/pubdb/views/publication_details.php?id=6010), [bing](https://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html), and [nrc](http://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm). However, according to Hamilton et al. (2016), the emotional sentiment of words or phrases often varies according to the domain or context. The following figure, borrowed from their article, illustrates this:
 
 ![](assets/domain_lexicon_eg.png)<!-- -->
-
+*Figure 1*. Word sentiment differences between a sports subreddit and a subreddit dedicated to female perspectives and struggles (Hamilton et al. 2016).
 # Proposed Research Questions
 
-1. Is there a significant difference between group specific lexicons?
+1. Is there a significant difference between subreddit group specific lexicons?
 
 2. Do the most common positive and negative words differ between each group, i.e. Dissociation, Depression, and Substance Use?
 
