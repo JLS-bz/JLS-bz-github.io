@@ -13,7 +13,7 @@ nav_order: 5
 
 # Methods:
 
-Using python, time series graphs used to visualize the frequency of posts within specific subreddit groups, in relation to time period.
+Using python, time series graphs are used to visualize the frequency of posts within specific subreddit groups, in relation to time period.
 # Group descriptions:
 1. **Anxiety**: Anxiety, Anxietyhelp, socialanxiety, HealthAnxiety, anxietysuccess
 2. **BPD** (Borderline Personality Disorder): BPD, BPDlovedones, BorderlinePDisorder, BPD4BPD, BPDParterns
