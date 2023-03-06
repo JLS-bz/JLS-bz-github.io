@@ -20,6 +20,8 @@ When sentiment analysis is performed, a lexicon is used to compare and assign em
 
 3. Among these groups, are there differences in the most common bi-grams (two word phrases) starting with the same word, such as "like" or "feel"?
 
+4. Do the major differences in the aspect-based sentiment analysis of each group relate to differences within DSM-V criteria?
+
 # Description of groups of subreddits
 1. **Anxiety**: Anxiety, Anxietyhelp, socialanxiety, HealthAnxiety, anxietysuccess
 2. **BPD** (Borderline Personality Disorder): BPD, BPDlovedones, BorderlinePDisorder, BPD4BPD, BPDParterns
@@ -29,21 +31,85 @@ When sentiment analysis is performed, a lexicon is used to compare and assign em
 6. **PTSD**: CPTSD, PTSD, Ptsdrecovery
 7. **Substances**: addiction, benzorecovery, Drugs, HPPD, leaves, opiates, Psychonaut, REDDITORSINRECOVERY, zoloft
 
-# To do
+# General To do
 
-End product:
+**End product:**
 1. Bar charts showing top most common positive and negative words in a subreddit, words associated with a specific word, i.e. like, feel, not, with x axis as sentiment value.
 2. Charts specific to each subreddit.
 3. Charts comparing the use of similar words used in different subreddits.
 4. Compare sentiment lexicons/dictionaries, domain specific vs AFINN vs bing vs NRC.
 
-Steps:
+**Steps:**
 1. Figure out and adapt [socialsent code](https://github.com/williamleif/socialsent) example.
 2. Create domain specific sentiment lexicons/dictionaries for each subreddit group.
 3. Perform sentiment analysis - looking at units beyond just words, sentiment of sentence.
 4. Visualize sentiment analysis output with plotnine
 
+--------------
+Sentiment Analysis Based on BERT Word Vector and Hierarchical Bidirectional LSTM
 
+https://skimai.com/fine-tuning-bert-for-sentiment-analysis/
+
+https://ieeexplore-ieee-org.proxy.lib.sfu.ca/document/9543231/figures#figures
+
+
+
+# Methodology:
+
+### A. Creating lexicons
+
+**Tools**: 
+
+**Steps**:
+1. Figure out min dataset size required.
+2. Using *socialsent*, run on dataset.
+
+### B. Fine-tune pretrained models
+
+To perform sentiment analysis on a specific dataset, fine-tune the model on that dataset by providing it with its respective lexicon produced in **Step A**.
+    - DeBERTa-v3-base-absa-v1.1: https://huggingface.co/yangheng/deberta-v3-base-absa-v1.1
+    - DistilBERT
+    - MobileBERT
+
+**Tools**: Hugging Face Transformers
+
+**Steps**:
+1. Dataset preparation: split selected dataset into *training*, *validation*, and *testing* sets.
+
+https://pub.towardsai.net/i-fine-tuned-gpt-2-on-110k-scientific-papers-heres-the-result-9933fe7c3c26
+
+2. Tokenization
+3. Model Initialization: load model and initialize it with pre-trained weights
+4. Add Classification Head: The classification head is a neural network layer that maps the output of the last layer of DeBERTa to a fixed number of output classes.
+5. Training: feed model with training set and backpropagate errors to update model parameters
+6. Evaluation: Evaluate performance of model on validation set. This helps fine-tune model hyperparameters to optimize performance
+7. Testing: Test fine-tuned model on testing set to evaluate performance on unseen data.
+
+https://www.geeksforgeeks.org/fine-tuning-bert-model-for-sentiment-analysis/
+
+### C. Aspect Modelling in Sentiment Analysis 
+
+Aspect Modelling in Sentiment Analysis (ABSA): 
+
+Aspect modelling is an advanced text-analysis technique that refers to the process of breaking down the text input into aspect categories and its aspect terms and then identifying the sentiment behind each aspect in the whole text input. The two key terms in this model are:
+    - Sentiments: A positive or negative review about a particular aspect
+    - Aspects: the category, feature, or topic that is under observation.
+
+
+**Tools**: SpaCy
+
+**Steps**:
+1. Consider the input text corpus and pre-process the dataset.
+2. Create Word Embeddings of the text input. (use a fine-tuned pretrained model)
+3. Aspect Terms Extraction -> Aspect Categories Model 
+4. Sentiment Extraction -> Sentiment Model 
+5. Combine 3 and 4 to create Aspect Based Sentiment.(OUTPUT)
+
+https://www.geeksforgeeks.org/aspect-modelling-in-sentiment-analysis/?ref=rp
+
+
+
+Aspect Modelling in Sentiment Analysis vs Hierarchical BiDirectional LSTM?
 
 # References
 
