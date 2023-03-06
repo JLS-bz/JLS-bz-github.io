@@ -58,11 +58,15 @@ https://ieeexplore-ieee-org.proxy.lib.sfu.ca/document/9543231/figures#figures
 
 ### A. Creating lexicons
 
-**Tools**: 
+**Tools**: socialsent library
 
 **Steps**:
 1. Figure out min dataset size required.
-2. Using *socialsent*, run on dataset.
+2. Dataset preparation: split selected dataset into *training*, *validation*, and *testing* sets.
+
+https://pub.towardsai.net/i-fine-tuned-gpt-2-on-110k-scientific-papers-heres-the-result-9933fe7c3c26
+
+3. Using *socialsent*, run on dataset.
 
 ### B. Fine-tune pretrained models
 
@@ -74,10 +78,7 @@ To perform sentiment analysis on a specific dataset, fine-tune the model on that
 **Tools**: Hugging Face Transformers
 
 **Steps**:
-1. Dataset preparation: split selected dataset into *training*, *validation*, and *testing* sets.
-
-https://pub.towardsai.net/i-fine-tuned-gpt-2-on-110k-scientific-papers-heres-the-result-9933fe7c3c26
-
+1. Set up separate environment for each pretrained model.
 2. Tokenization
 3. Model Initialization: load model and initialize it with pre-trained weights
 4. Add Classification Head: The classification head is a neural network layer that maps the output of the last layer of DeBERTa to a fixed number of output classes.
