@@ -71,8 +71,11 @@ https://pub.towardsai.net/i-fine-tuned-gpt-2-on-110k-scientific-papers-heres-the
 ### B. Fine-tune pretrained models
 
 To perform sentiment analysis on a specific dataset, fine-tune the model on that dataset by providing it with its respective lexicon produced in **Step A**.
+
     - DeBERTa-v3-base-absa-v1.1: https://huggingface.co/yangheng/deberta-v3-base-absa-v1.1
+
     - DistilBERT
+
     - MobileBERT
 
 **Tools**: Hugging Face Transformers
