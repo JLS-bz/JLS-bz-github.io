@@ -96,7 +96,9 @@ https://www.geeksforgeeks.org/fine-tuning-bert-model-for-sentiment-analysis/
 Aspect Modelling in Sentiment Analysis (ABSA): 
 
 Aspect modelling is an advanced text-analysis technique that refers to the process of breaking down the text input into aspect categories and its aspect terms and then identifying the sentiment behind each aspect in the whole text input. The two key terms in this model are:
+
     - Sentiments: A positive or negative review about a particular aspect
+   
     - Aspects: the category, feature, or topic that is under observation.
 
 
